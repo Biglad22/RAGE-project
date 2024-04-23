@@ -48,19 +48,9 @@
   }
 
 }
-
+/* 
 /* Dark Mode */
-@media (prefers-color-scheme: dark) {
 
-  :root{
-    --secondary-color: #333333; 
-    /* text emphasis for light mode */
-    --text-h : var(--text-light-h);
-    --text-m : var(--text-light-m);
-    --text-l : var(--text-light-l);
-    --outline : var(--outline-light);
-  }
-}
 
 
 
