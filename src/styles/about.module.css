@@ -1,0 +1,138 @@
+@import '../index.css';
+
+
+.heroSection{
+    background-image: url('../assets/about\ us\ img.png');
+    background-position:center center;
+    background-repeat: no-repeat; 
+    background-size:cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 80vh !important;
+    min-height: fit-content;
+    text-align: center;
+}
+.heroSection h1 {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.ceoSection{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    align-items: stretch;
+    flex-direction: row;
+    gap: calc(var(--section-spacing) / 2);
+
+}
+
+.ceoSection img{
+    flex: 0 0 30%;
+    max-width: 30%;
+    object-fit: cover;
+    object-position: center;
+    -o-object-fit: cover;
+    -o-object-position: center;
+}
+
+.ceoSection div{
+    flex:0 0 calc( 70% - (var(--section-spacing) / 2));
+    max-width: calc( 70% - (var(--section-spacing) / 2));
+}
+
+.teamMemCard{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+}
+
+.teamMemCardBody{
+    padding: 8px;
+    text-align: center;
+}
+.teamMemCardBody p{
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--tertiary-color);
+    text-align: center;
+}
+.teamMemCardBody small{
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--text-h);
+    text-align: center;
+}
+
+
+.teamWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: calc(var(--section-spacing) / 2);
+    align-items: center;
+    max-width:100%;
+}
+
+
+
+.ceoMsgWrap{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.ceoMsgWrap h5{
+    color:var(--tertiary-color);
+}
+
+.ceoMsgWrap p:not(.ceoName){
+    color:var(--text-m);
+}
+
+.ceoMsgWrap > .ceoName{
+    font-weight: 500;
+    text-transform: capitalize;
+    color:var(--text-h);
+}
+
+/* ====media quaries ===== */
+
+@media screen and (max-width: 980px) {
+    .teamWrapper{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .ceoSection{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ceoSection img{
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    .ceoSection div{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    
+}
+
+@media screen and (max-width: 480px) {
+    .ceoSection img{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .teamWrapper{
+        grid-template-columns: 1fr;
+    }
+}

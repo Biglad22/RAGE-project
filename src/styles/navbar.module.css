@@ -1,0 +1,75 @@
+@import '../index.css';
+
+nav{
+    display: flex;
+    padding: 16px var(--page-margin);
+    gap: 24px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: var(--secondary-color);
+    width: 100%;
+}
+
+.logo img{
+    height:calc((10px + 1vmin) * 1.75);
+}
+
+.navLinks{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: fit-content;
+}
+
+.navLinks .cta{
+    display: none;
+}
+.navBtns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+.navBtns .meunBtn{
+    display: none;
+}
+
+/* =========== media query ========= */
+
+@media screen and (max-width:927px) {
+    .navLinks{
+        flex-direction: column;
+        padding: 16px;
+        padding-inline-end: var(--page-margin);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        transform: translateX(100%);
+        background-color: var(--secondary-color);
+        height:100vh;
+        gap: 24px;
+        transition:all 1s ease;
+    }
+
+    .openMenu{
+        transform: translateX(0);
+        transition:all 1s ease;
+    }
+
+    .navBtns .meunBtn{
+        display: block;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .navLinks .cta{
+        display: block;
+    }
+    .navBtns .cta{
+        display: none;
+    }
+}

@@ -1,0 +1,221 @@
+@import '../index.css';
+
+/* ====== general styling ============  */
+section{
+    padding: var(--section-spacing) var(--page-margin);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--section-spacing);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+/* =========== hero section ============= */
+.heroSection{
+    background-image: url('../assets/home-img/home-hero-img.png');
+    background-position:center center;
+    background-repeat: no-repeat; 
+    background-size:100%;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh !important;
+    position: relative;
+}
+
+.heroSection div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: calc(var(--section-spacing) / 2);
+    padding: var(--page-margin);
+    text-align: center;
+}
+.heroSection div h1, .heroSection div h3{
+    color: var(--secondary-color);
+}
+.heroSection div h3{
+    font-weight: 400;
+    font-family: "Gothic A1", sans-serif;
+    font-style: normal;
+}
+
+
+/* ======== the problem section ======= */
+.qouteWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    text-align: center;
+}
+.qouteWrapper h5{
+    font-weight: 400;
+    color: var(--tertiary-color);
+}
+.qouteWrapper h5{
+    font-weight: 400;
+    color: var(--tertiary-color);
+}
+.qouteWrapper p{
+    text-transform: capitalize;
+    font-weight: 400;
+    color: var(--text-m);
+}
+
+.problemImg{
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    object-position:top;
+    -o-object-fit: cover;
+    -o-object-position:top;
+}
+
+
+/* ====== our mission section ======= */
+.missionImg{
+    display: flex;
+    height: 40vh;
+    width: 100%;
+    flex-wrap: wrap;
+    gap:16px;
+}
+
+
+
+.missionImg > img{
+    flex: 1;
+    height: 100%;
+    width: calc(50% - 8px);
+    object-fit: cover;
+    object-position: top;
+    -o-object-fit: cover;
+    -o-object-position: top;
+    transition: all 0.5s;
+}
+
+/* ======== volunteer section ========= */
+.volunteerSection{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.volunteerSection > img, .volunteerSection > div{
+    flex-basis: calc(50% -  var(--section-spacing));
+    width: calc(50% -  var(--section-spacing));
+}
+
+.volunteerSection > div{
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--section-spacing) / 2);
+    justify-content: center;
+    align-items: center;
+}
+
+/* ======= our sponsors =============*/
+.sponsorWrapper{
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--primary-color-varient-one);
+}
+
+.sponsor{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(var(--section-spacing) / 2);
+    width: 100%;
+}
+.sponsor img{
+    height:4vmin;
+    position: relative;
+    right: 0;
+}
+
+
+/* ====== media query ========= */
+@media screen and (min-width:1440px) {
+    .heroSection{
+    width: 1200px;
+    margin-inline:  auto;
+  }
+}
+
+@media screen and (max-width:927px){
+    .heroSection{
+        background-size:cover;
+        height: fit-content;
+    }
+
+    .problemImg{
+        width: 100%;
+        height: 45vh;
+    }
+
+    .missionImg{
+        height: 30vh;
+    }
+
+    .missionImg img{
+        flex: 1 1 calc(50% - 8px);
+        height: 30vh;
+    }
+
+    .volunteerSection > img{
+        height: 50vh;
+        max-width: 100%;
+        flex-basis:100%;
+        object-fit: cover;
+        object-position: top;
+        -o-object-fit: cover;
+        -o-object-position: top;
+    } 
+    .volunteerSection > div{
+        flex-basis: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:480px){
+    .problemImg{
+        width: 100%;
+        height: 30vh;
+    }
+
+    .qouteWrapper{
+        width: 100%;
+    }
+
+    .missionImg{
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .missionImg img{
+        flex: 1 1 100%;
+        width: 100%;
+        height: 25vh;
+    }
+
+    .volunteerSection > img{
+        height: 25vh;
+    }
+}

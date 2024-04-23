@@ -1,13 +1,277 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, ::before, ::after{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* Define colors */
+:root {
+  --primary-color: #4C3DFE;
+  --secondary-color: #FFFFFF;
+  --tertiary-color: #4D4D4D;
+  --dark-text: #FFFFFF;
+  --primary-color-varient-one: #F3F2FF;
+
+  --text-dark-h: rgba(0, 0, 0, 0.86); /* 86% opacity */
+  --text-dark-m: rgba(0, 0, 0, 0.6); /* 60% opacity */
+  --text-dark-l: rgba(0, 0, 0, 0.3); /* 30% opacity */
+  --outline-dark: rgb(230, 230,230);
+
+  --text-light-h: rgba(255, 255, 255, 0.86); /* 86% opacity */
+  --text-light-m: rgba(255, 255, 255, 0.6); /* 60% opacity */
+  --text-light-l: rgba(255, 255, 255, 0.3); /* 30% opacity */
+  --outline-light: rgb(20, 20, 20);
+
+  /* section spacing and margins */
+  --page-margin:10vw;
+  --section-spacing : 6.4vmin;
+}
+
+
+/* ====== custom styles for light and dark color scheme =======  */
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {  
+
+  :root{
+    /* text emphasis for light mode */
+    --text-h : var(--text-dark-h);
+    --text-m : var(--text-dark-m);
+    --text-l : var(--text-dark-l);
+    --outline : var(--outline-dark);
+  }
+
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+
+  :root{
+    --secondary-color: #333333; 
+    /* text emphasis for light mode */
+    --text-h : var(--text-light-h);
+    --text-m : var(--text-light-m);
+    --text-l : var(--text-light-l);
+    --outline : var(--outline-light);
+  }
+}
+
+
+
+/* ========= Body styling ======== */
+html {
+  font-size: calc(10px + 0.8vmin);
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+}
+
+
+/* ======= font sizing ============ */
+/* h1 */
+h1 {
+  font-size: 2.55rem !important; /* Base font size for h1 */
+}
+
+/* h2 */
+h2 {
+  font-size: 2.25rem !important; /* Base font size for h2 */
+}
+
+/* h3 */
+h3 {
+  font-size: 1.75rem !important; /* Base font size for h3 */
+}
+
+/* h4 */
+h4 {
+  font-size: 1.5rem !important; /* Base font size for h4 */
+}
+
+/* h5 */
+h5 {
+  font-size: 1.25rem !important; /* Base font size for h5 */
+}
+
+/* h6 */
+h6 {
+  font-size: 1.125rem !important; /* Base font size for h6 */
+}
+
+/* p */
+p, a, button, li {
+  font-size: 1rem !important; /* Base font size for paragraphs */
+  line-height: 150%;
+}
+
+/* small */
+small {
+  font-size: 0.8rem !important; /* Base font size for small text */
+}
+
+
+
+/* =========== other custom stylings ============ */
+
+/* Heading styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--text-h);
+  text-transform: capitalize;
+}
+
+
+p, small, a, button, li{
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Link styling */
+a:not(:is(.cta, .site-link)), a:not(:is(.logo)) {
+  color: var(--text-m);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  padding: 8px;
+  width: fit-content;
+  position: relative;
+  text-decoration: none;
+}
+
+a:is(.active){
+    color: var(--primary-color) !important;
+}
+
+a:not(:is(.cta, .site-link))::after, a:not(:is(.logo))::after{
+  content: '';
+  position: absolute;
+  top:100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--primary-color);
+  transition: all 0.5s;
+}
+
+a:not(:is(.cta, .site-link)):hover::after, a:not(:is(.logo)):hover::after, a:is(.active)::after {
+    width: 100% !important;
+}
+
+/* call to action Button styling */
+.cta {
+  background-color: var(--primary-color);
+  color: var(--secondary-color) !important;
+  padding: 6px 14px;
+  border: 2px solid var(--primary-color);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+.cta:hover {
+  background-color: #3a2be3;
+  transition: all 0.25s;
+}
+
+/* outlined btn styling */
+
+.outlined-btn {
+  background-color: transparent;
+  color: var(--primary-color) !important;
+  padding: 6px 14px;
+  border: 2px solid var(--primary-color);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*text btn styling*/
+
+.text-btn {
+  background-color:  transparent;
+  color: var(--primary-color) !important;
+  padding: 6px 14px;
+  border: 2px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*section header styling*/
+.title{
+    color: var(--tertiary-color);
+    padding: 8px 24px;
+    width: fit-content;
+    position: relative;
+}
+
+.title::after{
+    content:'';
+    height: 2px;
+    width: 100%;
+    background-color: var(--primary-color);
+    position:absolute;
+    border-radius: 2px;
+    top: 100%;
+    left: 0;
+}
+
+/* section body text styling*/
+.section-body{
+  text-align: center;
+  line-height: 150%;
+}
+
+/*styling for menu button*/
+.meun-btn{
+  background-color: unset;
+  font-size: 2rem !important;
+  line-height: 50%;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.meun-btn:hover{
+  transform: scale(1.1);
+  transition: all 0.25s ease;
+}
+
+/* ========= media query ============ */
+
+@media screen and (min-width:1440px) {
+  :root{
+    --page-margin: calc((100% - 1200px) / 2);
+  }
+}
+@media screen and (max-width:320px) {
+  :root{
+    --page-margin: 6.4vmin;
+  }
 }

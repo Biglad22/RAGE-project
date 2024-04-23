@@ -1,0 +1,299 @@
+@import '../index.css';
+
+
+section{
+    padding: var(--section-spacing) var(--page-margin);
+}
+
+.ongoingProjectSection{
+    padding: var(--page-margin);
+    padding-bottom: var(--section-spacing);
+}
+
+/* styling for ongoing project */
+
+.mainWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.projectInfo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--section-spacing) / 2);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    flex: 1;
+    padding: calc(var(--section-spacing) / 2);
+    background-color: var(--primary-color-varient-one);
+}
+
+.mainWrapper > img {
+    flex: 1;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+    -o-object-fit: cover;
+    -o-object-position: center;
+}
+
+.projectInfo > h4{
+    color: var(--tertiary-color);
+}
+
+.projectInfo > .btns{
+    display: flex;
+    flex-wrap: nowrap;
+    gap:16px;
+    align-items: center;
+    width: 100%;
+}
+
+.projectInfo > .btns > a {
+    flex: 1;
+}
+
+.projectInfo > .details > p{
+    margin-bottom: calc(var(--section-spacing) / 2);
+    color: var(--text-h);
+}
+
+.projectInfo > .details > ul{
+    padding-inline-start: calc(var(--section-spacing) / 2);
+}
+
+.projectInfo > .details > ul > li{
+    color: var(--text-m);
+}
+
+.projectInfo > .budget{
+    display: flex;
+    flex-wrap: nowrap;
+    gap:16px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.projectInfo > .budget > h6{
+    color: var(--text-m);
+}
+.projectInfo > .budget > h6 > span{
+    color: var(--tertiary-color) !important;
+}
+
+/*tag for ongoing project*/
+.ongoingProjectSection .status{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    align-items: center;
+    padding: 8px;
+    padding-inline-start: 0;
+    gap: 4px;
+}
+.ongoingProjectSection .status .bulb{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    border: 0.2rem solid var(--outline);
+    background-color: var(--primary-color);
+}
+.ongoingProjectSection .status > p{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.ongoingProjectSection > .sponsors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: calc(var(--section-spacing) / 2);
+    width: 100%;
+}
+
+.ongoingProjectSection > .sponsors > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--section-spacing);
+    width: 100%;
+}
+
+.ongoingProjectSection > .sponsors > div > img{
+    height: 9vmin;
+}
+
+
+/* === other projects card design ===== */
+
+.projectContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+    padding: calc(var(--section-spacing) / 2);
+    border: 2px solid var(--outline);
+}
+
+.projectContainer  small {
+    text-transform: capitalize;
+    color: var(--text-m);
+    font-weight: 600;
+}
+
+.projectContainer > small {
+    margin-left: auto;
+}
+
+.projectContainer > .mainDetail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+    width:100%;
+}
+.projectContainer > .mainDetail h5{
+    color: var(--tertiary-color);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.projectContainer > .mainDetail p{
+    color: var(--text-m);
+    line-height: 150%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.projectContainer > .performanceWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    gap: 16px;
+}
+
+.projectContainer > .performanceWrapper > div {
+    text-align: center;
+    flex: 1 0 auto;
+}
+
+.projectContainer > .performanceWrapper > div > p{
+    margin-bottom: 0;
+    color: var(--text-m);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.projectContainer > .performanceWrapper > div > small{
+    text-transform: capitalize;
+}
+
+
+.projectContainer .sponsors{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.projectContainer .sponsors > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: calc(var(--section-spacing) / 2);
+}
+
+.projectContainer .sponsors > div > img {
+    flex-basis: content;
+    height: 1vmax;
+}
+
+.projectContainer > .outlinedBtn{
+    width: 100%;
+}
+
+
+
+/* ======= project page main styling ======= */
+
+.projectsPageWrap > .otherProjectsWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--section-spacing);
+    padding-block: var(--section-spacing);
+}
+
+/* ==== media queries ==== */
+@media screen and (max-width:810px) {
+    .mainWrapper{
+        flex-direction: column-reverse;
+        gap: 0;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .mainWrapper > img{
+        width: 100%;
+        max-height: 45vh;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .projectsPageWrap > .otherProjectsWrapper{
+        gap: calc(var(--section-spacing) / 2);
+    }
+}
+
+@media screen and (max-width:680px) {
+    .projectContainer > .performanceWrapper > div {
+        text-align: center;
+        flex: 0 0 100%;
+    }
+    .projectContainer .sponsors{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .projectContainer .sponsors > div > img {
+        height:2vmax;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .projectsPageWrap > .otherProjectsWrapper{
+        grid-template-columns: 1fr;
+    }
+    .projectContainer > .performanceWrapper > div {
+        text-align: center;
+        flex: 0 0 auto;
+    }
+    .projectContainer .sponsors{
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+    .projectContainer .sponsors > div > img {
+        height: 2vmax;
+    }
+}
