@@ -5,6 +5,7 @@ import treasurerImg from '../assets/team/sandra.png';
 import proImg from '../assets/team/adepeju.png';
 import classes from '../styles/about.module.css';
 import CEOImg from '../assets/ceo.jpg';
+import childenImg from '../assets/home-img/volunteer-img.png';
 
 //data & information displaying on screen
 const aboutPageData = {
@@ -45,7 +46,8 @@ const aboutPageData = {
         },
         mission : {
             title: 'our mission',
-            text: "Our mission at R.A.G.E is to provide free, quality education to every child in Nigeria, ensuring equal opportunities for all. Through innovative programs, community engagement, and advocacy efforts, we aim to break down barriers to education, empower marginalized communities, and foster a culture of lifelong learning. By investing in the potential of our youth, we strive to create a brighter future for Nigeria, where every child has the knowledge, skills, and opportunities to thrive and contribute positively to society."
+            text: "Our mission at R.A.G.E is to provide free, quality education to every child in Nigeria, ensuring equal opportunities for all. Through innovative programs, community engagement, and advocacy efforts, we aim to break down barriers to education, empower marginalized communities, and foster a culture of lifelong learning. By investing in the potential of our youth, we strive to create a brighter future for Nigeria, where every child has the knowledge, skills, and opportunities to thrive and contribute positively to society.",
+            img: childenImg
         },
         vision : {
             title: 'our vision',
@@ -61,11 +63,17 @@ const aboutPageData = {
 
 //hero section
 const HeroSection = ({title})=>{
+    const titles = title.split(':');
+
     return(
         <section className={`${classes.heroSection}`}>
             <h1>
-                {title}
+                {titles[0]}
             </h1>
+            <h4>
+                {titles[1]}
+            </h4>
+            
         </section>
     )
 }
@@ -110,20 +118,25 @@ const CEOSection = ({message, name, img}) =>{
                  message from our CEO
                 </h5>
                 <p className="section-body">{message}</p>
-                <p className={`${classes.ceoName}`}>{name}</p>
+                <h6 className={`${classes.ceoName}`}>{name}</h6>
             </div>
         </section>
         
     )
 }
 
-const Article = ({title, text}) =>{
+const Article = ({title, text, img}) =>{
     return(
-        <section>
+        <section className={`${classes.articleSection}`}>
             <h4 className="title">
                 {title}
             </h4>
-            <p className='section-body'>{text}</p>
+            <p className='section-body' >{text}</p>
+            {
+                img && (
+                    <img src={img} alt={`${title}`} />
+                )
+            }
         </section>
     )
 }
