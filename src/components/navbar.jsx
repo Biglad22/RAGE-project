@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import classes from "../styles/navbar.module.css";
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { CTABtn } from "../extracomponents/cta-btn";
 
 export const NavBar = () =>{
 
@@ -19,7 +20,7 @@ export const NavBar = () =>{
     const links = [
        { page : 'home', link:'/'},
        { page : 'projects', link:'/projects'},
-       { page : 'volunteer', link:''},
+       { page : 'volunteer', link:'/volunteer'},
        { page : 'about us', link:'/about'}
     ];
 
@@ -34,11 +35,12 @@ export const NavBar = () =>{
                     {
                         links.map((i, index)=>(<Link to={i.link} key={index} className={currentPath === i.link ? 'active' : ''}  > {i.page} </Link>))
                     }
-                    <Link to='/volunteer' className={`${classes.cta} cta`}>volunteer</Link>
+                    <CTABtn link='/volunteer' type='route' title='volunteer' />
                 </div>
 
                 <div className={`${classes.navBtns}`}>
-                    <Link to='/volunteer' className={`${classes.cta} cta`}>volunteer</Link>
+                    <CTABtn link='/volunteer' type='route' title='volunteer' />
+                    
                     <button type="button" className={`${classes.meunBtn} meun-btn`} onClick={handleClick} style={{color : isOpen ? '#4D4D4D' :  '#4C3DFE'}}>
                         {isOpen ? <FaTimes /> : <FaBars />}
                     </button>

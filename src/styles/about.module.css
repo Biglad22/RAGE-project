@@ -16,12 +16,12 @@
     
 }
 .heroSection h1 {
-    color: var(--secondary-color);
+    color: var(--secondary-light-color);
     font-weight: 500;
 }
 .heroSection h4{
     color: var(--text-light-h);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .ceoSection{

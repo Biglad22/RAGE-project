@@ -12,17 +12,24 @@
 
 /* Define colors */
 :root {
-  --primary-color: #4C3DFE;
-  --secondary-color: #FFFFFF;
-  --tertiary-color: #4D4D4D;
+  --primary-light-color: #4C3DFE;
+  --secondary-light-color: #FFFFFF;
+  --tertiary-light-color: #4D4D4D;
   --dark-text: #FFFFFF;
-  --primary-color-varient-one: #F3F2FF;
+  --primary-color-varient-one-light: #F3F2FF;
 
+  --primary-dark-color: #695cff;
+  --secondary-dark-color: #1d1c1c;
+  --tertiary-dark-color: #bcbcbc;
+  --primary-color-varient-one-dark: #404047;
+
+  --text-dark: rgb(0, 0, 0);
   --text-dark-h: rgba(0, 0, 0, 0.86); /* 86% opacity */
   --text-dark-m: rgba(0, 0, 0, 0.6); /* 60% opacity */
   --text-dark-l: rgba(0, 0, 0, 0.3); /* 30% opacity */
   --outline-dark: rgb(230, 230,230);
 
+  --text-light: rgb(255, 255, 255);
   --text-light-h: rgba(255, 255, 255, 0.86); /* 86% opacity */
   --text-light-m: rgba(255, 255, 255, 0.6); /* 60% opacity */
   --text-light-l: rgba(255, 255, 255, 0.3); /* 30% opacity */
@@ -41,70 +48,92 @@
 
   :root{
     /* text emphasis for light mode */
+    --text : var(--text-dark);
     --text-h : var(--text-dark-h);
     --text-m : var(--text-dark-m);
     --text-l : var(--text-dark-l);
-    --outline : var(--outline-dark);
+    --outline : var(--outline-light);
+
+    --primary-color: var(--primary-light-color); 
+    --secondary-color : var(--secondary-light-color);
+    --tertiary-color : var(--tertiary-light-color);
+    --primary-color-varient-one : var(--primary-color-varient-one-light);
   }
 
 }
 /* 
 /* Dark Mode */
 
+@media (prefers-color-scheme: dark) {  
 
+  :root{
+    /* text emphasis for light mode */
+    --text : var(--text-light);
+    --text-h : var(--text-light-h);
+    --text-m : var(--text-light-m);
+    --text-l : var(--text-light-l);
+    --outline : var(--outline-dark);
+
+    
+    --primary-color: var(--primary-dark-color); 
+    --secondary-color : var(--secondary-dark-color);
+    --tertiary-color : var(--tertiary-dark-color);
+    --primary-color-varient-one : var(--primary-color-varient-one-dark);
+  }
+
+}
 
 
 /* ========= Body styling ======== */
 html {
-  font-size: calc(10px + 0.8vmin);
+  font-size: calc(10px + 0.5vmin);
 }
 
 body {
   background-color: var(--secondary-color);
-  color: var(--tertiary-color);
 }
 
 
 /* ======= font sizing ============ */
 /* h1 */
 h1 {
-  font-size: 2.55rem !important; /* Base font size for h1 */
+  font-size: 3rem !important; /* Base font size for h1 */
 }
 
 /* h2 */
 h2 {
-  font-size: 2.25rem !important; /* Base font size for h2 */
+  font-size: 2.75rem !important; /* Base font size for h2 */
 }
 
 /* h3 */
 h3 {
-  font-size: 1.75rem !important; /* Base font size for h3 */
+  font-size: 2.5rem !important; /* Base font size for h3 */
 }
 
 /* h4 */
 h4 {
-  font-size: 1.5rem !important; /* Base font size for h4 */
+  font-size: 2rem !important; /* Base font size for h4 */
 }
 
 /* h5 */
 h5 {
-  font-size: 1.25rem !important; /* Base font size for h5 */
+  font-size: 1.5rem !important; /* Base font size for h5 */
 }
 
 /* h6 */
 h6 {
-  font-size: 1.125rem !important; /* Base font size for h6 */
+  font-size: 1.3rem !important; /* Base font size for h6 */
 }
 
 /* p */
 p, a, button, li {
-  font-size: 1rem !important; /* Base font size for paragraphs */
+  font-size: 1.2rem !important; /* Base font size for paragraphs */
   line-height: 150%;
 }
 
 /* small */
 small {
-  font-size: 0.8rem !important; /* Base font size for small text */
+  font-size: 0.9rem !important; /* Base font size for small text */
 }
 
 
@@ -126,6 +155,7 @@ p, small, a, button, li{
     font-family: "Gothic A1", sans-serif;
     font-weight: 500;
     font-style: normal;
+    color: var(--text-m);
 }
 
 /* Link styling */
@@ -165,7 +195,7 @@ a:not(:is(.cta, .site-link)):hover::after, a:not(:is(.logo)):hover::after, a:is(
 .cta {
   background-color: var(--primary-color);
   color: var(--secondary-color) !important;
-  padding: 6px 14px;
+  padding: 4px 8px !important;
   border: 2px solid var(--primary-color);
   border-radius: 0;
   cursor: pointer;
@@ -174,6 +204,7 @@ a:not(:is(.cta, .site-link)):hover::after, a:not(:is(.logo)):hover::after, a:is(
   font-weight: 600;
   text-decoration: none;
   text-align: center;
+  position: relative;
 }
 
 .cta:hover {
@@ -181,12 +212,22 @@ a:not(:is(.cta, .site-link)):hover::after, a:not(:is(.logo)):hover::after, a:is(
   transition: all 0.25s;
 }
 
+.cta::before {
+  position: absolute;
+  width: 100%;
+  background-color: var(--secondary-color);
+  height: 100%;
+  content: '';
+  top: 0;
+  left: 0;
+}
+
 /* outlined btn styling */
 
 .outlined-btn {
   background-color: transparent;
   color: var(--primary-color) !important;
-  padding: 6px 14px;
+  padding: 4px 8px !important;
   border: 2px solid var(--primary-color);
   border-radius: 0;
   cursor: pointer;

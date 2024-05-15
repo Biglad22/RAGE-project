@@ -1,0 +1,47 @@
+/* call to action Button styling */
+.cta {
+    background-color: var(--primary-color);
+    color: var(--secondary-color) !important;
+    padding: 4px 8px !important;
+    border: 2px solid var(--primary-color);
+    border-radius: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+}
+
+.cta p {
+  color: var(--secondary-color);
+  transition: all 0.5s ease-in-out;
+  position: sticky;
+  width: fit-content;
+  z-index: 2;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.cta:hover p {
+  color: var(--primary-color);
+  transition: all 0.5s ease-in-out;
+}
+
+.cta::before {
+  position: absolute;
+  width: 0%;
+  background-color: var(--secondary-color);
+  height: 100%;
+  content: '';
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.25s ease-in-out;
+}
+
+.cta:hover:before {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    transform-origin: left;
+}

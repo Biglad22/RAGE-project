@@ -6,6 +6,7 @@ import proImg from '../assets/team/adepeju.png';
 import classes from '../styles/about.module.css';
 import CEOImg from '../assets/ceo.jpg';
 import childenImg from '../assets/home-img/volunteer-img.png';
+import { motion } from 'framer-motion';
 
 //data & information displaying on screen
 const aboutPageData = {
@@ -66,7 +67,8 @@ const HeroSection = ({title})=>{
     const titles = title.split(':');
 
     return(
-        <section className={`${classes.heroSection}`}>
+        <section className={`${classes.heroSection}`}
+        >
             <h1>
                 {titles[0]}
             </h1>
@@ -97,7 +99,7 @@ const TeamMemberCard = ({role, name, img}) =>{
 const TeamSection = ({team}) => {
     return(
         <section>
-            <h4 className="title">our team</h4>
+            <h5 className="title">our team</h5>
             <div className={`${classes.teamWrapper}`}>
                 {team.map((i, index) =>(
                     <TeamMemberCard {...i} key={index}/>
@@ -118,7 +120,7 @@ const CEOSection = ({message, name, img}) =>{
                  message from our CEO
                 </h5>
                 <p className="section-body">{message}</p>
-                <h6 className={`${classes.ceoName}`}>{name}</h6>
+                <h6 className={`${classes.ceoName}`}>~ {name}</h6>
             </div>
         </section>
         
@@ -128,9 +130,9 @@ const CEOSection = ({message, name, img}) =>{
 const Article = ({title, text, img}) =>{
     return(
         <section className={`${classes.articleSection}`}>
-            <h4 className="title">
+            <h5 className="title">
                 {title}
-            </h4>
+            </h5>
             <p className='section-body' >{text}</p>
             {
                 img && (

@@ -6,7 +6,8 @@ import unicef from '../assets/our-sponsors/UNICEF USA.svg';
 import dangote from '../assets/our-sponsors/Dangote Group.svg';
 import uba from '../assets/our-sponsors/UBA Group.svg';
 import { Link } from 'react-router-dom';
-import classes from '../styles/projects.module.css'
+import classes from '../styles/projects.module.css';
+import { CTABtn } from '../extracomponents/cta-btn';
 
 const projectsPageData ={
     ongoing:{
@@ -119,7 +120,7 @@ const OngoingProject = ({status, title, details, objectives, budget, sponsors, i
                     </div>
 
                     <div className={`${classes.btns}`}>
-                        <Link to="/volunteer" className='cta'>donate</Link>
+                        <CTABtn link='/volunteer' title='donate' type='route' />
                         <Link to="/volunteer" className='outlined-btn'>volunteer</Link>
                     </div>
                 </div>
@@ -191,7 +192,7 @@ export const ProjectsPage = () =>{
         <>
             <OngoingProject {...projectsPageData.ongoing} /> 
             <section className={`${classes.projectsPageWrap}`}>
-                <h4 className="title">our other projects</h4>
+                <h5 className="title">our other projects</h5>
                 <div className={`${classes.otherProjectsWrapper}`}>
                     {projectsPageData.otherProjects.map((i, index) => (
                         <OtherProject {...i} key={index} />

@@ -25,7 +25,7 @@ nav{
     width: fit-content;
 }
 
-.navLinks .cta{
+.navLinks > a:last-child , .navLinks > button {
     display: none;
 }
 .navBtns {
@@ -66,10 +66,10 @@ nav{
 }
 
 @media screen and (max-width:460px) {
-    .navLinks .cta{
+    .navLinks > a:last-child , .navLinks > button{
         display: block;
     }
-    .navBtns .cta{
+    .navBtns > a , .navBtns > button:first-child{
         display: none;
     }
 }

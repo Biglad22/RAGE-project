@@ -46,7 +46,7 @@ ul{
 
 .footerSection div:nth-child(2) li, .footerSection div:nth-child(2) a {
     text-transform: capitalize;
-    color: var(--secondary-color);
+    color: var(--text-light);
     padding-inline: 0;
     font-weight: 500;
 }
@@ -77,7 +77,7 @@ ul{
 .footerSection div:nth-child(3) ul li a{
     width: 100%;
     text-align: end;
-    color: var(--secondary-color);
+    color: var(--text-light);
     font-weight: 500;
     transition: all 0.25s ease;
 }

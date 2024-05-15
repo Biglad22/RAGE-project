@@ -12,7 +12,8 @@ import sponsorFour from "../assets/our-sponsors/UNICEF USA.svg";
 import sponsorFive from "../assets/our-sponsors/nestle.svg";
 import sponsorSix from "../assets/our-sponsors/shoprite.svg";
 import classes from "../styles/home.module.css"; 
-
+import { CTABtn } from "../extracomponents/cta-btn";
+import { motion } from "framer-motion";
 
 
 
@@ -59,14 +60,27 @@ const homePageData = {
 const HeroSection = ({img, mainText, subText}) =>{
     return(
         <section className={`${classes.heroSection}`} >
-            <div>
+            <motion.div
+                initial={{y:'50%', x:'-50%', opacity:0,
+                transition:{
+                    duration: 1,
+                    ease:'easeInOut'
+                }
+                }}
+                animate={{y:'-50%', x:'-50%', opacity:1}}
+                exit={{y:'50%', x:'-50%', opacity:0, transition:{
+                    duration: 0.25,
+                    ease:'easeInOut',
+                }}}
+                transition={{duration:1}}
+            >
                 <h1>
                     {mainText}
                 </h1>
-                <h3>
+                <h4>
                     {subText}
-                </h3>
-            </div>
+                </h4>
+            </motion.div>
         </section>
     )
 };
@@ -76,7 +90,7 @@ const ProblemSection = ({title, qoute, img, body}) =>{
 
     return(
         <section>
-            <h4 className="title">{title}</h4>
+            <h5 className="title">{title}</h5>
 
             <div className={`${classes.qouteWrapper}`}>
                 <h5 className="qoute">
@@ -97,8 +111,21 @@ const ProblemSection = ({title, qoute, img, body}) =>{
 const MissionSection = ({title, qoute, img, body}) =>{
 
     return(
-        <section>
-            <h4 className="title">{title}</h4>
+        <section
+            initial={{y:'50%', x:'-50%', opacity:0,
+            transition:{
+                duration: 1,
+                ease:'easeInOut'
+            }
+            }}
+            animate={{y:'-50%', x:'-50%', opacity:1}}
+            exit={{y:'50%', x:'-50%', opacity:0, transition:{
+                duration: 0.25,
+                ease:'easeInOut',
+            }}}
+            transition={{duration:1}}
+        >
+            <h5 className="title">{title}</h5>
 
             <div className={`${classes.qouteWrapper}`}>
                 <h5 className="qoute">
@@ -124,7 +151,7 @@ const VolunteerSection = ({title, img, body}) =>{
             <img src={img} alt="children in class" />
             <div>
                 <p className="section-body">{body}</p>
-                <Link to='/volunteer' className='cta'>join mission</Link>
+                <CTABtn link='/volunteer' type='route' title='join mission' />
             </div>
         </section>
     )
@@ -134,7 +161,6 @@ const VolunteerSection = ({title, img, body}) =>{
 const Sponsors = ({sponsor}) =>{
     return(
         <section className={`${classes.sponsorWrapper}`}>
-            <h4 className="title">our sponsors</h4>
             <div className={`${classes.sponsor}`}>
                 {sponsor.map((i, index) => (<img src={i} key={index} alt="our sponsors"/>))}
             </div>
