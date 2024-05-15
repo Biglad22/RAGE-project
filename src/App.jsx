@@ -17,7 +17,7 @@ function App() {
       <NavBar />
       <ScrollToTop/>
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+        <Routes location={location} key={location.pathname} >
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/volunteer" element={<VounteerPage />} />
