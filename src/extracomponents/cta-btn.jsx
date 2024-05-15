@@ -18,7 +18,7 @@ export const CTABtn = ({type, title, link}) =>{
             
             break;  
             
-        case 'anchor':
+        case 'button':
             componentToRender = <button className={`${classes.cta} cta`} href={link}><p>{title}</p></button>   
             
             break;  

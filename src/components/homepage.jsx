@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import problemImg from "../assets/home-img/problem-sect-img.png";
 import missionImgOne from "../assets/home-img/mission-img-one.png";
 import missionImgTwo from "../assets/home-img/mission-img-two.png";

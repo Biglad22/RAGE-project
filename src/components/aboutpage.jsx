@@ -1,4 +1,3 @@
-
 import headCoordinatorImg from '../assets/team/johnson.png';
 import coordinatorTwoImg from '../assets/team/joy.png';
 import treasurerImg from '../assets/team/sandra.png';
@@ -6,7 +5,6 @@ import proImg from '../assets/team/adepeju.png';
 import classes from '../styles/about.module.css';
 import CEOImg from '../assets/ceo.jpg';
 import childenImg from '../assets/home-img/volunteer-img.png';
-import { motion } from 'framer-motion';
 
 //data & information displaying on screen
 const aboutPageData = {
