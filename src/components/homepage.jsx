@@ -13,7 +13,7 @@ import sponsorSix from "../assets/our-sponsors/shoprite.svg";
 import classes from "../styles/home.module.css"; 
 import { CTABtn } from "../extracomponents/cta-btn";
 import { motion } from "framer-motion";
-
+import { CachedImage } from "../cache-func/CacheImage";
 
 
 
@@ -135,7 +135,8 @@ const MissionSection = ({title, qoute, img, body}) =>{
                 </p>
             </div>
             <div className={`${classes.missionImg}`}>
-                {img.map((i, index) => (<img src={i} key={index} alt='children in class'/>))}
+                {img.map((i, index) => (<CachedImage src={i} key={index} alt='children in class' />))}
+                {/* <img src={i} key={index} alt='children in class'/> */}
             </div>
             <p className="section-body">{body}</p>
 
@@ -147,7 +148,8 @@ const MissionSection = ({title, qoute, img, body}) =>{
 const VolunteerSection = ({title, img, body}) =>{
     return(
         <section  className={`${classes.volunteerSection}`}>
-            <img src={img} alt="children in class" />
+            {/* <img src={img} alt="children in class" /> */}
+            <CachedImage src={img} alt="children in class" />
             <div>
                 <p className="section-body">{body}</p>
                 <CTABtn link='/volunteer' type='route' title='join mission' />

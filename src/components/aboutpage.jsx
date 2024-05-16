@@ -5,6 +5,7 @@ import proImg from '../assets/team/adepeju.png';
 import classes from '../styles/about.module.css';
 import CEOImg from '../assets/ceo.jpg';
 import childenImg from '../assets/home-img/volunteer-img.png';
+import { CachedImage } from '../cache-func/CacheImage';
 
 //data & information displaying on screen
 const aboutPageData = {
@@ -83,7 +84,8 @@ const TeamMemberCard = ({role, name, img}) =>{
     return (
         <>
             <div className={`${classes.teamMemCard}`}>
-                <img className="card-img-top" src={img} alt={`${role}'s`} />
+                {/* <img className="card-img-top" src={img} alt={`${role}'s`} /> */}
+                <CachedImage   className="card-img-top" src={img} alt={`${role}'s`} />
                 <div className={`${classes.teamMemCardBody}`}>
                     <p className="card-title">{name}</p>
                     <small className="card-text">{role}</small>
@@ -112,7 +114,8 @@ const CEOSection = ({message, name, img}) =>{
     return (
 
         <section className={`${classes.ceoSection}`}>
-            <img className="ceo-img" src={img} alt={`CEO's message`} />
+            {/* <img className="ceo-img" src={img} alt={`CEO's message`} /> */}
+            <CachedImage   className="ceo-img" src={img} alt={`CEO's message`} />
             <div className={`${classes.ceoMsgWrap}`}>
                 <h5>
                  message from our CEO
@@ -134,7 +137,8 @@ const Article = ({title, text, img}) =>{
             <p className='section-body' >{text}</p>
             {
                 img && (
-                    <img src={img} alt={`${title}`} />
+                    // <img src={img} alt={`${title}`} />
+                    <CachedImage src={img} alt={`${title}`} />
                 )
             }
         </section>

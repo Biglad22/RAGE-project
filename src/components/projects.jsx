@@ -8,6 +8,7 @@ import uba from '../assets/our-sponsors/UBA Group.svg';
 import { Link } from 'react-router-dom';
 import classes from '../styles/projects.module.css';
 import { CTABtn } from '../extracomponents/cta-btn';
+import { CachedImage } from '../cache-func/CacheImage';
 
 const projectsPageData ={
     ongoing:{
@@ -124,7 +125,8 @@ const OngoingProject = ({status, title, details, objectives, budget, sponsors, i
                         <Link to="/volunteer" className='outlined-btn'>volunteer</Link>
                     </div>
                 </div>
-                <img src={img} alt='school children' />
+                {/* <img src={img} alt='school children' /> */}
+                <CachedImage src={img} alt='school children' />
             </div>
 
             {/* <div className={`${classes.sponsors}`}>
@@ -176,7 +178,8 @@ const OtherProject = ({status, title, details, funds, NOC, NOV, sponsors})=>{
                 </small>
                 <div className={`${classes.sponsorsWrapper}`}>
                     {sponsors.map((i, index) =>(
-                        <img src={i} key={index} alt="our sponsors" />
+                        // <img src={i} key={index} alt="our sponsors" />
+                        <CachedImage src={i} key={index} alt="our sponsors" />
                     ))}
                 </div>
             </div>
