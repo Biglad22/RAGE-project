@@ -129,6 +129,8 @@ const OngoingProject = ({status, title, details, objectives, budget, sponsors, i
                 <CachedImage src={img} alt='school children' />
             </div>
 
+
+
             {/* <div className={`${classes.sponsors}`}>
                 <h5>sponsors</h5>
                 <div>
@@ -136,6 +138,7 @@ const OngoingProject = ({status, title, details, objectives, budget, sponsors, i
                 </div>
             </div> */}
         </section>
+
     )
 }
 

@@ -59,27 +59,14 @@ const homePageData = {
 const HeroSection = ({img, mainText, subText}) =>{
     return(
         <section className={`${classes.heroSection}`} >
-            <motion.div
-                initial={{y:'50%', x:'-50%', opacity:0,
-                transition:{
-                    duration: 1,
-                    ease:'easeInOut'
-                }
-                }}
-                animate={{y:'-50%', x:'-50%', opacity:1}}
-                exit={{y:'50%', x:'-50%', opacity:0, transition:{
-                    duration: 0.25,
-                    ease:'easeInOut',
-                }}}
-                transition={{duration:1}}
-            >
+            <div>
                 <h1>
                     {mainText}
                 </h1>
                 <h4>
                     {subText}
                 </h4>
-            </motion.div>
+            </div>
         </section>
     )
 };
